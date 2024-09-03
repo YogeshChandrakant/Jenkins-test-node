@@ -10,7 +10,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
 const dotenv = require('dotenv');
 const environment = process.env.NODE_ENV || 'qa';  // default to 'qa' if NODE_ENV is not set
 dotenv.config({ path: `.env.${environment}` });

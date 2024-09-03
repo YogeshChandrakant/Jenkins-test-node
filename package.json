@@ -9,13 +9,18 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^5.0.1",
-    "smooth-scroll": "^16.1.3"
+    "smooth-scroll": "^16.1.3",
+    "webpack": "^5.64.4",
+    "fpm": "^1.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    // "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prebuild": "node update-version.js",
+    "build": "webpack --config webpack.config.js",
+    "package-deb": "fpm -s dir -t deb -n your-app-name -v $npm_package_version ."
   },
   "eslintConfig": {
     "extends": "react-app"

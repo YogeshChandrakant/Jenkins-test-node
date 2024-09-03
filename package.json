@@ -15,9 +15,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "node update-version.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "node update-version.js",
     "build": "webpack --config webpack.config.js",
     "package-deb": "fpm -s dir -t deb -n your-app-name -v $npm_package_version ."
   },

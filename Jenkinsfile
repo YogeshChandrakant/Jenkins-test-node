@@ -14,9 +14,9 @@ pipeline {
         }
         stage('Verify Node.js and npm') {
             steps {
-                sh 'node -v'
-                sh 'npm -v'
-            }
+            sh 'node -v'
+            sh 'npm -v'
+        }
         }
 
         stage('Install Dependencies') {
@@ -37,32 +37,9 @@ pipeline {
             }
         }
 
-        stage('Deploy to QA') {
-            when {
-                branch 'qa'
-            }
+        stage('Deploy') {
             steps {
-                // Add your deployment steps here, e.g., SCP to a server, AWS S3, etc.
-                echo 'Deploying to QA environment...'
-            // Example: sh 'scp -r build/ user@server:/path/to/deploy'
-            }
-        }
-
-        stage('Deploy to UAT') {
-            when {
-                branch 'uat'
-            }
-            steps {
-                echo 'Deploying to UAT environment...'
-            }
-        }
-
-        stage('Deploy to Production') {
-            when {
-                branch 'main'
-            }
-            steps {
-                echo 'Deploying to Production environment...'
+                echo 'Deploying the application...'
             }
         }
     }

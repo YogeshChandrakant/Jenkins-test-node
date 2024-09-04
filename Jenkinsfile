@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODE_HOME = tool name: 'landingpage-react-template', type: 'NodeJS'
+        NODE_HOME = tool name: 'NodeJS', type: 'NodeJS'
         PATH = "${NODE_HOME}/bin:${env.PATH}"
     }
 

@@ -12,6 +12,12 @@ pipeline {
                 git url: 'https://github.com/YogeshChandrakant/Jenkins-test-node.git', branch: 'main'
             }
         }
+        stage('Verify Node.js and npm') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
@@ -38,7 +44,7 @@ pipeline {
             steps {
                 // Add your deployment steps here, e.g., SCP to a server, AWS S3, etc.
                 echo 'Deploying to QA environment...'
-                // Example: sh 'scp -r build/ user@server:/path/to/deploy'
+            // Example: sh 'scp -r build/ user@server:/path/to/deploy'
             }
         }
 

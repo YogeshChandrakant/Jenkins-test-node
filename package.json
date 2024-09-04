@@ -13,13 +13,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "pkg . --out-path build",
-    "build:qa": "npm run build && mv build/project-name build/demo-1.0.1.deb",
-    "build:uat": "npm run build && mv build/project-name build/demo-1.0.1.deb",
-    "build:production": "npm run build && mv build/project-name build/demo-1.0.1.deb",
+    "build": "react-scripts build",
+    "build:qa": "npm run build && mv build/project-name build/qa-1.0.1.deb",
+    "build:uat": "npm run build && mv build/project-name build/uat-1.0.1.deb",
+    "build:production": "npm run build && mv build/project-name build/production-1.0.1.deb",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "bin": "index.js",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
   }
 }
